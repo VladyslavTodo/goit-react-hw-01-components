@@ -5,7 +5,7 @@ import { Card, Title, StatList, Item } from './Statistics.styled';
 const Statistics = ({ title, stats }) => {
   return (
     <Card>
-      <Title>{title}</Title>
+      {title && <Title>{title}</Title>}
 
       <StatList>
         {stats.map(el => (
@@ -26,7 +26,7 @@ function getRandomHexColor() {
 }
 
 Statistics.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   stats: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
